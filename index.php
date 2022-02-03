@@ -48,12 +48,11 @@ include "koneksi.php";
         } else {
             $data = mysqli_query($koneksi, "select * from member INNER JOIN upline ON member.id_upline = upline.id_upline");
         }
-        $no = 1;
         while ($d = mysqli_fetch_array($data)) {
         ?>
             <tr>
                 <td>
-                    <center><?php echo $no++; ?></center>
+                    <center><?php echo $d['id']; ?></center>
                 </td>
                 <td>
                     <center><?php echo $d['nama']; ?></center>
